@@ -33,6 +33,8 @@ import (
 	v1 "github.com/google/go-containerregistry/pkg/v1"
 	"github.com/pkg/errors"
 
+	internalcos "github.com/sigstore/cosign/pkg/internal/cosign"
+	"github.com/sigstore/cosign/pkg/internal/cosign/verify"
 	"github.com/sigstore/cosign/pkg/oci"
 	ociremote "github.com/sigstore/cosign/pkg/oci/remote"
 	rekor "github.com/sigstore/rekor/pkg/client"
@@ -172,7 +174,8 @@ func Verify(ctx context.Context, signedImgRef name.Reference, accessor Accessor,
 				if len(signature) == 0 {
 					co.SigVerifier = newReverseDSSEVerifier(co.SigVerifier)
 				}
-				if err := co.SigVerifier.VerifySignature(bytes.NewReader(signature), bytes.NewReader(payload), options.WithContext(ctx)); err != nil {
+				sigVer := &verify.BasicSignatureVerifier{SigVerifier: co.SigVerifier}
+				if err := internalcos.VerifyImageSignatures(ctx, se, sigVer); err != nil {
 					return err
 				}
 			// If we don't have a public key to check against, we can try a root cert.
