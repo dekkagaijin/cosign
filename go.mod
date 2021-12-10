@@ -22,10 +22,10 @@ require (
 	github.com/miekg/pkcs11 v1.0.3
 	github.com/open-policy-agent/opa v0.35.0
 	github.com/pkg/errors v0.9.1
-	github.com/secure-systems-lab/go-securesystemslib v0.2.0
+	github.com/secure-systems-lab/go-securesystemslib v0.3.0
 	github.com/sigstore/fulcio v0.1.2-0.20211207184413-f4746cc4ff3d
 	github.com/sigstore/rekor v0.3.1-0.20211203233407-3278f72b78bd
-	github.com/sigstore/sigstore v1.0.2-0.20211203233310-c8e7f70eab4e
+	github.com/sigstore/sigstore v1.0.2-0.20211210190220-04746d994282
 	github.com/spf13/cobra v1.2.1
 	github.com/spf13/viper v1.9.0
 	github.com/stretchr/testify v1.7.0

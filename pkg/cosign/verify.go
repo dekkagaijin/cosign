@@ -115,11 +115,15 @@ func verifyOCIAttestation(_ context.Context, verifier signature.Verifier, att oc
 
 	env := ssldsse.Envelope{}
 	if err := json.Unmarshal(payload, &env); err != nil {
-		return nil
+		return err
 	}
 
-	dssev := ssldsse.NewEnvelopeVerifier(&dsse.VerifierAdapter{SignatureVerifier: verifier})
-	return dssev.Verify(&env)
+	dssev, err := ssldsse.NewEnvelopeVerifier(&dsse.VerifierAdapter{SignatureVerifier: verifier})
+	if err != nil {
+		return err
+	}
+	_, err = dssev.Verify(&env)
+	return err
 }
 
 func validateAndUnpackCert(cert *x509.Certificate, co *CheckOpts) (signature.Verifier, error) {
