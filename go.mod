@@ -20,13 +20,13 @@ require (
 	github.com/in-toto/in-toto-golang v0.3.4-0.20211211042327-af1f9fb822bf
 	github.com/manifoldco/promptui v0.9.0
 	github.com/miekg/pkcs11 v1.0.3
-	github.com/open-policy-agent/opa v0.35.0
+	github.com/open-policy-agent/opa v0.36.1
 	github.com/pkg/errors v0.9.1
 	github.com/secure-systems-lab/go-securesystemslib v0.3.0
 	github.com/sigstore/fulcio v0.1.2-0.20211207184413-f4746cc4ff3d
 	github.com/sigstore/rekor v0.3.1-0.20211211150321-b8eca1b71e0b
 	github.com/sigstore/sigstore v1.0.2-0.20211210190220-04746d994282
-	github.com/spf13/cobra v1.2.1
+	github.com/spf13/cobra v1.3.0
 	github.com/spf13/viper v1.10.0
 	github.com/stretchr/testify v1.7.0
 	github.com/theupdateframework/go-tuf v0.0.0-20211209174453-13f0687177ba
@@ -47,6 +47,5 @@ require (
 	github.com/prometheus/procfs v0.7.3 // indirect
 	github.com/urfave/cli v1.22.5 // indirect
 	go.opentelemetry.io/contrib v1.2.0 // indirect
-	go.opentelemetry.io/proto/otlp v0.11.0 // indirect
 	k8s.io/klog/v2 v2.30.0 // indirect
 )
