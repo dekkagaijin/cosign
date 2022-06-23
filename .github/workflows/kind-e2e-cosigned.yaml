@@ -68,7 +68,7 @@ jobs:
     - uses: imjasonh/setup-ko@2c3450ca27f6e6f2b02e72a40f2163c281a1f675 # v0.4
 
     - name: Install yq
-      uses: mikefarah/yq@f0b37ea06d732d9f4b1aabeb1bbbb14d2d979843 # v4.16.2
+      uses: mikefarah/yq@b669844ef72b8e0ebc1844a611bf56a5331aeb31 # v4.16.2
 
     - name: Install Cosign
       run: |
